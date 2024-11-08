@@ -47,7 +47,7 @@ class _TransactionListState extends State<TransactionList> {
                   key: Key(item),
                   confirmDismiss: (DismissDirection dir) async {
                     if (dir == DismissDirection.startToEnd) {
-                      final bool res = await showDialog(
+                      final bool? res = await showDialog(
                         context: context,
                         builder: (BuildContext ctx) {
                           return AlertDialog(
@@ -82,6 +82,7 @@ class _TransactionListState extends State<TransactionList> {
                       );
                       return res;
                     }
+                    return null;
                   },
                   background: Container(
                     color: Colors.redAccent,
